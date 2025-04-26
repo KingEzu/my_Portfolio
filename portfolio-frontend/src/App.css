@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+
+.dancing_text {
+  font-family: "Dancing Script", cursive;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+::-webkit-scrollbar-track {
+  background: #d1e5ff;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#642bff, #ff22e6);
+  border-radius: 7px;
+}
+.text-tubeLight-effect {
+  display: flex;
+  color: #fff;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%;
+  outline: none;
+  overflow-y: hidden;
+  /* -webkit-box-reflect: below -27px linear-gradient(transparent, #ffffff40); */
+  animation: animate 5s linear infinite;
+}
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: gray;
+    text-shadow: none;
+  }
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  80.1%,
+  90.1%,
+  92.1%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 1px rgb(150, 150, 150), 0 0 2px rgb(150, 150, 150),
+      0 0 2px rgb(150, 150, 150), 0 0 5px rgb(150, 150, 150),
+      0 0 20px rgb(150, 150, 150);
+  }
+}
+/* General Navigation Container */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg-color); /* Adapts to theme */
+  transition: background-color 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  top: 50%;
+  justify-content: space-between;
+}
+
+/* Logo Styling */
+.logo {
+  flex: 0.2;
+}
+
+.logo h1 {
+
+  margin-top: 10;
+  color: var(--text-color); /* Adapts to theme */
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  justify-content: center;
+}
+/* Navigation Links Styling */
+.nav ul {
+  display: flex;
+  list-style: none;
+  flex-direction: row; /* Default for larger screens */
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Space between items */
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  position: relative; /* For decorative effects */
+  overflow: hidden;
+  background-color: transparent; /* Default transparent */
+  border-radius: 12px; /* Smooth rounded corners */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav ul li:hover,
+.nav ul li:focus-within {
+  /*background-color: rgba(100, 200, 255, 0.2); /* Subtle hover background */
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  color: var(--text-color); /* Dynamic text color */
+  padding: 10px 20px;
+  border-radius: 10px; /* Rounded button effect */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav ul li a:hover {
+
+  color: #fff; /* Change text color */
+  transform: scale(1.1); /* Slight zoom effect */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Glow effect */
+
+}
+.nav ul li:hover,
+.nav ul li:focus-within {
+  
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* Decorative Underline on Hover */
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: lime;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
+/* Right Corner: Mode Toggle and Hamburger Menu */
+.right-corner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: -1;
+  justify-content: flex-end;
+}
+
+/* Dark/Light Mode Toggle */
+/* Dark/Light Mode Toggle */
+.mode-toggle {
+  cursor: pointer;
+  color: var(--text-color); /* Adapts to theme */
+  display: inline-flex; /* Keeps it inline without affecting layout */
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Set a fixed width */
+  height: 40px; /* Set a fixed height */
+  margin: 0; /* Remove any unnecessary margins */
+  position: relative; /* Keep it relative to prevent layout shift */
+}
+/* Active Link Styling */
+.nav ul li .active-link {
+  font-size: 19px; /* Increase font size*/
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  color: lime;
+  transition: all 0.3s ease-in-out;
+  overflow: 5px;
+}
+
+/* Adjust hover effect for non-active links */
+.nav ul li a {
+  font-size: 16px; /* Default size for inactive links */
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.nav ul li a:hover {
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+}
+
+
+/* Hamburger Menu Styling */
+.menu-toggle {
+  display: none; /* Hidden by default on large screens */
+}
+
+/* Ensure that the name stays on the same line */
+.name-logo-container {
+  display: flex;
+  top: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
+.namelogo {
+  font-size: 3rem; /* Adjust size as needed */
+  font-weight: bold;
+  font-family: "Dancing Script", cursive;
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Hide navigation links on smaller screens */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure the dropdown is above other elements */
+  }
+
+  .nav.open {
+    display: flex; /* Show navigation links when menu is open */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between items */
+    width: 100%; /* Full width */
+    align-items: center; /* Center list items horizontally */
+    text-align: center;
+  }
+
+  .nav ul li {
+    width: 100px; /* Uniform width */
+    height: 50px; /* Uniform height */
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .nav ul li a {
+    font-size: 16px; /* Text size */
+    text-decoration: none; /* Remove underline */
+    color: var(--text-color); /* Dynamic color */
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    width: 100%; /* Full width of list item */
+    height: 100%; /* Full height of list item */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav ul li a:hover {
+   
+    color: white; /* Text color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+
+  /* Adjust layout for small screens */
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex: unset; /* Align logo to the left */
+  }
+
+  .right-corner {
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+  }
+
+  /* Display hamburger menu */
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  /* Center the mode toggle */
+  .mode-toggle {
+    margin: top 50px;
+  }
+}
